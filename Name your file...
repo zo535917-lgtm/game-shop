@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遊戲道具庫存展示</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans">
+
+    <header class="bg-slate-800 border-b border-slate-700 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-wider text-amber-400">⚡ 遊戲小舖庫存中心</h1>
+            <a href="https://line.me" target="_blank" class="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition flex items-center gap-2">
+                💬 聯繫客服下單
+            </a>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 mb-8">
+            <h2 class="text-lg font-semibold text-amber-400 mb-2">📌 購買須知</h2>
+            <p class="text-slate-300 text-sm leading-relaxed">
+                本站僅展示目前即時庫存與商品介紹。看到喜歡的商品請截圖並透過 LINE 聯繫我們確認匯款與交貨！交易安全快速，歡迎選購。
+            </p>
+        </div>
+
+        <div class="flex gap-2 mb-6 overflow-x-auto pb-2">
+            <button onclick="filterCategory('all')" class="category-btn bg-amber-500 text-slate-950 px-4 py-2 rounded-lg text-sm font-bold transition">全部商品</button>
+            <button onclick="filterCategory('cat')" class="category-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-2 rounded-lg text-sm transition">貓咪大戰爭</button>
+            <button onclick="filterCategory('other')" class="category-btn bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-2 rounded-lg text-sm transition">其他手遊</button>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            
+            <div class="product-card bg-slate-800 border border-slate-700 rounded-xl overflow-hidden flex flex-col justify-between" data-category="cat">
+                <div>
+                    <div class="h-40 bg-slate-700 flex items-center justify-center text-slate-400 text-sm">
+                        [ 商品圖片預留區 ]
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-white">貓罐頭 45,000 個</h3>
+                            <span class="bg-green-500/20 text-green-400 text-xs px-2 py-1 rounded">庫存充足</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4">安全進度、穩定引繼，適合想快速起步的玩家。</p>
+                        <div class="text-amber-400 font-bold text-lg mb-4">NT$ 300</div>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <a href="https://line.me" target="_blank" class="block w-full bg-amber-500 hover:bg-amber-400 text-slate-950 text-center font-bold py-2 rounded-lg transition text-sm">
+                        詢問購買
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card bg-slate-800 border border-slate-700 rounded-xl overflow-hidden flex flex-col justify-between" data-category="cat">
+                <div>
+                    <div class="h-40 bg-slate-700 flex items-center justify-center text-slate-400 text-sm">
+                        [ 商品圖片預留區 ]
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-white">全超激初始號</h3>
+                            <span class="bg-amber-500/20 text-amber-400 text-xs px-2 py-1 rounded">僅剩 2 組</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4">新手開局首選，內含大量稀有角色與資源。</p>
+                        <div class="text-amber-400 font-bold text-lg mb-4">NT$ 500</div>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <a href="https://line.me" target="_blank" class="block w-full bg-amber-500 hover:bg-amber-400 text-slate-950 text-center font-bold py-2 rounded-lg transition text-sm">
+                        詢問購買
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card bg-slate-800 border border-slate-700 rounded-xl overflow-hidden flex flex-col justify-between" data-category="other">
+                <div>
+                    <div class="h-40 bg-slate-700 flex items-center justify-center text-slate-400 text-sm">
+                        [ 商品圖片預留區 ]
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-white">客製化代練服務</h3>
+                            <span class="bg-red-500/20 text-red-400 text-xs px-2 py-1 rounded">接單中</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4">指定關卡通關、活動素材代刷，歡迎私訊報價。</p>
+                        <div class="text-amber-400 font-bold text-lg mb-4">私訊報價</div>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <a href="https://line.me" target="_blank" class="block w-full bg-amber-500 hover:bg-amber-400 text-slate-950 text-center font-bold py-2 rounded-lg transition text-sm">
+                        詢問購買
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-slate-800 border-t border-slate-700 mt-12 py-6 text-center text-slate-400 text-sm">
+        <p>&copy; 2026 遊戲小舖 版權所有</p>
+    </footer>
+
+    <script>
+        function filterCategory(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.category-btn');
+
+            // 按鈕樣式切換
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-amber-500', 'text-slate-950', 'font-bold');
+                btn.classList.add('bg-slate-800', 'text-slate-300');
+            });
+            event.target.classList.remove('bg-slate-800', 'text-slate-300');
+            event.target.classList.add('bg-amber-500', 'text-slate-950', 'font-bold');
+
+            // 卡片顯示隱藏
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
